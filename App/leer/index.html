@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lector NewsFeed</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/estiloNewsfeed.css">
+<style type="text/css" media="screen">
+	#newsfeed{
+        width: 300px;
+        height: 300px;
+	}
+	#newsfeed2{
+        width: 300px;
+        height: 300px;
+	}
+	#newsfeed3{
+        width: 300px;
+        height: 300px;
+	}
+	.newsfeed-element{
+		background-color: gray;
+	}
+</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6" id="newsfeed"></div>
+		</div>
+	</div>
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../../sdAPIClient/newsfeed/sdNewsfeedReader.js"></script>
+	<script>
+	var nsfd = new sdNewsfeedReader("newsfeed",{intermitente:true});
+	</script>
+</body>
+</html>
