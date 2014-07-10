@@ -2,9 +2,9 @@
 include('../includes/conectionController.php');
 
 // $new = $_POST;
-$elementos = array( "titulo"=>'Caminero1 web',"descripcion"=>'Herramienta carretera por vistas georefenciada',"fecha"=>'10/10/2010' );
+$elementos = array( "titulo"=>'Caminerytyo2314 web',"descripcion"=>'Herramienta carretera por vistas georefenciada',"fecha"=>time() );
 
-// $elementos = array( "titulo"=>$new['titulo'],"descripcion"=>$new['descripcion'],"fecha"=>$new['fecha'] );
+// $elementos = array( "titulo"=>$new['titulo'],"descripcion"=>$new['descripcion'],"fecha"=>time() );
 
 $client = new mongoConection();
 

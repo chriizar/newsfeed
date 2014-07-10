@@ -19,6 +19,11 @@ class mongoConection
 		return $this->db->news->insert($consulta);
 	}
 
+	function getNews()
+	{
+		return $this->db->news->find();
+	}
+
 	function verificaNew($new)
 	{	
 		 $existe = false;
@@ -38,8 +43,16 @@ class mongoConection
 		return $this->db->lastError();
 	}
 
+	function listNews()
+	{
+		$array = iterator_to_array( $this->getNews() );
+		return $array;
+	}
 
-
+	function verifyUrl($url)
+	{
+		return $this->db->listaUrl->findOne($url);
+	}
 
 }
 
