@@ -15,13 +15,14 @@
 		<hr>
 		<div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
 			<p><i class="glyphicon glyphicon-hand-down"></i>&nbsp;Ingresa las noticias relacionadas con Semic en los siguientes espacios.</p>
-			<form id="formPublicar" action="?" method="post" class="col-md-12 col-lg-12 form-inline" role="form">
-			  <div class="form-group">
+			<form id="formPublicar" class="col-md-12 col-lg-12 form-inline" role="form">
+			 <!--  <div class="form-group">
 			    <div class="input-group">
+
 			      <div class="input-group-addon">*Fecha</div>
 			      <input id="Nfecha" class="form-control" type="text" placeholder="">
 			    </div>
-			  </div>
+			  </div> -->
 			   <div class="form-group">
 			    <div class="input-group">
 			      <div class="input-group-addon">*Titulo</div>
@@ -35,11 +36,11 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <div class="input-group">
-			      <div class="input-group-addon">*Editor</div>
+			  <div class="input-group">
+			    <!--    <div class="input-group-addon">*Editor</div>
 			      <input id="Neditor" class="form-control" type="text" placeholder="">
-			    </div>
-			  </div>
+			    </div>-->
+			  </div> 
 			  <button id="Nenviar" type="button" class="btn btn-default">Guardar</button>
 			</form>
 			<div class="col-md-12 col-lg-12 alert">
@@ -57,28 +58,28 @@
 
 		$("#Nenviar").click(function(){
 
-
-
-			var noticia = {
-							fecha: $("#Nfecha").val(),
+			var formPublicar = {
+							//fecha: $("#Nfecha").val(),
 							titulo: $("#Ntitulo").val(),
 							descripcion: $("#Ndescripcion").val()
 						  };
 
-			
 				$.ajax({
 					  type: "POST",
-					  url: "http://sctcloud.com.mx/api/newsfeed/publicar/",
-					  data: noticia,
-					  success: function(response){
-					  				if( response == 'success'){
-					  					$(".alert").html('<i class="glyphicon glyphicon-ok-sign"></i>&nbsp;Error al publicar noticia.<br>Por favor, vuélve a intentarlo. Si el problema continúa reportarlo con el administrador.');
-					  				}else{
+					  url: "../includes/leerController.php",
+					  data: formPublicar,
+		                    success: function(response)
+		                    {
+		                    	  if(response!="error"){             
+			                        									   
 					  					$(".alert").html('<i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;Error al publicar noticia.<br>Por favor, vuélve a intentarlo. Si el problema continúa reportarlo con el administrador.');
+
+					  				}else{
+                       				 	$(".alert").html('<i class="glyphicon glyphicon-ok-sign"></i>&nbsp;Agregado con exito.');
 					  				}
-					  			}
-					});
-			
+					  		}
+		    		});
+
 			});
 
 	</script>
