@@ -24,6 +24,11 @@ html{
 	font-size: 40px;
 }
 
+.contPublicar{
+	height: 60%;
+	background-color: rgb(237, 238, 240);
+}
+
 #fecha{
 	font-weight: bold;
 }
@@ -64,3 +69,49 @@ button{
 }
 
 /*---------- leer/index.php--------------*/
+
+#newsfeed{
+    width: 300px;
+    height: 300px;
+    overflow-x: hidden;
+}
+
+.newsfeed-element{
+	background-color: rgb(43, 43, 43);
+	margin: 10px 0 0 10px;
+	height: 180px;
+}
+
+.titulo-element{
+	font-family: "LeagueGothic-Regular";
+	color: rgb(245, 184, 82);
+	text-transform: uppercase;
+	font-size: 30px;
+	margin: 0px;
+	padding: 5px;
+	text-align: center;
+	/*Puntos suspensivos*/
+	text-overflow:ellipsis;
+  	white-space:nowrap; 
+  	overflow:hidden; 
+}
+
+.fecha-element{
+	display: -webkit-box;
+	text-align: -webkit-right;
+	padding: 0 10px 0 10px;
+	color: rgb(237, 238, 240);
+}
+
+.descripcion-element{
+	display: -webkit-box;
+	text-transform: capitalize;
+	height: 60%;
+	padding: 5px;
+	margin: 5px;
+	background-color: rgb(237, 238, 240);
+	/*Puntos suspensivos*/
+	text-overflow:ellipsis;
+  	white-space:nowrap; 
+  	overflow:hidden;
+}

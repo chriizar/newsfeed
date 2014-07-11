@@ -13,7 +13,7 @@
 			<div id="fecha" class="col-md-2 col-lg-2"></div>
 		</div>
 		<hr>
-		<div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+		<div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 contPublicar">
 			<p><i class="glyphicon glyphicon-hand-down"></i>&nbsp;Ingresa las noticias relacionadas con Semic en los siguientes espacios.</p>
 			<form id="formPublicar" class="col-md-12 col-lg-12 form-inline" role="form">
 			 <!--  <div class="form-group">
@@ -37,9 +37,9 @@
 			  </div>
 			  <div class="form-group">
 			  <div class="input-group">
-			    <!--    <div class="input-group-addon">*Editor</div>
+			    <div class="input-group-addon">*Editor</div>
 			      <input id="Neditor" class="form-control" type="text" placeholder="">
-			    </div>-->
+			    </div>
 			  </div> 
 			  <button id="Nenviar" type="button" class="btn btn-default">Guardar</button>
 			</form>
@@ -48,14 +48,16 @@
 			</div>
 		</div>
 	</div>
-      <script src="../js/jquery-1.11.0.min.js"></script>
-	<script>
 
+      <script src="../js/jquery-1.11.0.min.js"></script>
+
+	<script>
 		//Mostrar fecha actual
 		var f = new Date();
 		var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 		$("#fecha").append(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
 
+/*
 		$("#Nenviar").click(function(){
 
 			var formPublicar = {
@@ -88,6 +90,7 @@
 					console.log('finished');
 				})
 		});
+*/
 	</script>
 
 </body>

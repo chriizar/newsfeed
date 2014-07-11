@@ -41,7 +41,7 @@ this.intermitente  = function(opt){
 				getNews();
 				$(this).html("").fadeIn('fast');
 				});
-    		},5000);
+    		},100000);
 		}	
 	};
 

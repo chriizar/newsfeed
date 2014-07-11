@@ -1,6 +1,8 @@
 <?php
-include('../../App/includes/conectionController.php');
-$client = new mongoConection();
+//include('../../App/includes/conectionController.php'); <-- DESCOMENTAR
+//$client = new mongoConection(); <-- DESCOMENTAR
+
+
 /*
  if ( empty($_SERVER['HTTP_REFERER']) ){  			  // <-- condicion en caso de que este vacia
  	echo "no hay ruta origen";			  			  //   desactivada por que siempre esta enviando la URL
@@ -8,6 +10,9 @@ $client = new mongoConection();
  }else{
  */
  //	 $ruta = $_SERVER['HTTP_REFERER'];				  // <-- switch para determinar la url obtenida
+ 	
+/* <-- DESCOMENTAR
+
  	$ruta = "http://semicmex.com.mx/";				  //	 o fija para obtener la lista  de las noticias
 
  	// echo "ruta origen :".$ruta."<br>";
@@ -24,8 +29,9 @@ $client = new mongoConection();
 			echo $json;								
 
 	 	}
+*/
 
-/*
+
 $noticias = array(
 				  array(
 				  	'titulo'      => "no seas putocvbcvbcvb",
@@ -111,5 +117,4 @@ $noticias = array(
 			echo $json;		
 
 
-*/
-
+?>
