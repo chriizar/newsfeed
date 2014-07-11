@@ -48,7 +48,7 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+      <script src="../js/jquery-1.11.0.min.js"></script>
 	<script>
 
 		//Mostrar fecha actual
@@ -63,25 +63,31 @@
 							titulo: $("#Ntitulo").val(),
 							descripcion: $("#Ndescripcion").val()
 						  };
-
-				$.ajax({
+			$.ajax({
 					  type: "POST",
 					  url: "../includes/leerController.php",
 					  data: formPublicar,
-		                    success: function(response)
-		                    {
-		                    	  if(response!="error"){             
-			                        									   
-					  					$(".alert").html('<i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;Error al publicar noticia.<br>Por favor, vuélve a intentarlo. Si el problema continúa reportarlo con el administrador.');
-
-					  				}else{
-                       				 	$(".alert").html('<i class="glyphicon glyphicon-ok-sign"></i>&nbsp;Agregado con exito.');
-					  				}
-					  		}
-		    		});
-
-			});
-
+				})
+				.done(function(response){
+                     var obj = jQuery.parseJSON(response);
+                       if(obj.err == null)
+                       {
+				         $(".alert").html('<i class="glyphicon glyphicon-ok-sign"></i>&nbsp;Agregado con exito.');
+				         $('.alert').show(); 
+				         $('.alert').delay(1000).hide(250);  
+					}else{
+						$(".alert").html('<i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;Error al publicar noticia.<br>Por favor, vuélve a intentarlo. Si el problema continúa reportarlo con el administrador.');
+				        $('.alert').show(); 
+				        $('.alert').delay(1000).hide(250);  
+					}
+				})
+				.fail(function(request,status,error) {
+			        console.log('ocurrio un error al enviar la info');
+				})
+				.always(function(){
+					console.log('finished');
+				})
+		});
 	</script>
 
 </body>

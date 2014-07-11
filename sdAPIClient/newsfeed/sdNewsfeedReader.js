@@ -1,33 +1,3 @@
-var news =   [{
-			 titulo:"titulo",
-			 descripcion:"descripcion",
-			 fecha:"12-julio"
-		     },
-		     {
-			 titulo:"titulo",
-			 descripcion:"descripcion",
-			 fecha:"13-julio"
-		     },
-		     {
-			 titulo:"titulo",
-			 descripcion:"descripcion",
-			 fecha:"13-julio"
-		     },
-		     {
-			 titulo:"titulo",
-			 descripcion:"descripcion",
-			 fecha:"13-julio"
-		     },
-		     {
-			 titulo:"titulo",
-			 descripcion:"descripcion",
-			 fecha:"13-julio"
-		     },
-		     {
-			 titulo:"titulo",
-			 descripcion:"descripcion",
-			 fecha:"13-julio"
-		     }];
 
 function sdNewsfeedReader(container, opciones){
 

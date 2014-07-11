@@ -7,16 +7,17 @@ include('conectionController.php');
 $elementos = array( "titulo"=>$new['titulo'],"descripcion"=>$new['descripcion'],"fecha"=>time() );
 
 $client = new mongoConection();
+$client->setNews($elementos);
+	$err ="{ err:null }";
+	echo json_encode($err);
+//$existe = $client->verificaNew($elementos['titulo']);
 
-$existe = $client->verificaNew($elementos['titulo']);
-
-	if (empty($existe)){
-		//echo"no fue encontrada";	
-		  $resultado =  $client->setNews($elementos);
-	}else{
-		//echo "fue encontrado con el id = ".$fila[0]; // 42	
-		echo "error";
-	}
+//	if ( $existe == false){
+//	echo json_encode( $client->setNews($elementos) );
+//	}else{
+//		$err ="{ err:true }";
+//		echo json_encode($err);
+//	}
 
 ?>
 
